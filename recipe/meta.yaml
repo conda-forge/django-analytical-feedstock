@@ -1,5 +1,5 @@
 {% set name = "django-analytical" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d2142dcfc122018dcb5bb56c97a7708f3bf5c367a00a09e7bee71c3f2ac30a53
+  sha256: 6127c9196c8de3bcb4626f420d2ae670a7703152b1841b1b3e852b31a9a9d44b
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'The django-analytical application integrates analytics services into a Django project.'
+  summary: The django-analytical application integrates analytics services into a Django project.
   description: |
     Using an analytics service with a Django project means adding Javascript
     tracking code to the project templates. Of course, every service has its
