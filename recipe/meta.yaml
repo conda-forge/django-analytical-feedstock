@@ -1,5 +1,5 @@
 {% set name = "django-analytical" %}
-{% set version = "3.1.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6127c9196c8de3bcb4626f420d2ae670a7703152b1841b1b3e852b31a9a9d44b
+  sha256: 0871db04aa8c864b0b44c98b462d2b8682ba9c31ab89f50d54a5ddfdc3ff6223
 
 build:
   number: 0
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python <=3.7
     - pip
   run:
-    - python >=3.6
-    - django >=2.2,<4
+    - python <=3.7
+    - django >=2,<3
 
 test:
   imports:
