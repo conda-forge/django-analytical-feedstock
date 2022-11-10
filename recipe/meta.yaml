@@ -1,5 +1,5 @@
 {% set name = "django-analytical" %}
-{% set version = "2.5.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,24 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0871db04aa8c864b0b44c98b462d2b8682ba9c31ab89f50d54a5ddfdc3ff6223
+  sha256: d2142dcfc122018dcb5bb56c97a7708f3bf5c367a00a09e7bee71c3f2ac30a53
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python <=3.7
+    - python <=3.6
     - pip
   run:
-    - python <=3.7
-    - django >=2,<3
+    - python <=3.6
+    - django >=2.2
 
 test:
   imports:
     - analytical
-  requires:
-    - pip
-  commands:
-    - pip check
 
 about:
   home: https://github.com/jazzband/django-analytical
