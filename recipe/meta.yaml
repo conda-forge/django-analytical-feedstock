@@ -1,16 +1,16 @@
 {% set name = "django-analytical" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6127c9196c8de3bcb4626f420d2ae670a7703152b1841b1b3e852b31a9a9d44b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 48de51819b8ae6743838aeddacf7f72a8e85a9bdc8d33d2b89178d154ade7109
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
